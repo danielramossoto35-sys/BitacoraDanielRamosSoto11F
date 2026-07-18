@@ -1,4 +1,4 @@
-¿+852!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +25,8 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%; /* Asegura que el contenedor principal use el espacio disponible */
+            box-sizing: border-box;
         }
 
         footer {
@@ -60,9 +62,17 @@
             transform: scale(1.2); /* Aumenta el tamaño un 20% */
         }
 
+        /* Corrección de la clase .semana para que tenga estilos base */
+        .semana {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
         .semana-hover {
             background-color: aliceblue;
-            border-color: #a0fc11 25px;
+            border-color: #a0fc11;
+            border-width: 25px;
             box-shadow: 0px 15px 25px rgba(176, 255, 0, 0.4);
             text-align: center;
             border-left: #eb2eff 16px solid;
@@ -71,16 +81,17 @@
         .semana h2 {
             background-color: aliceblue;
             color: #1cf726;
-            border-color: #a0fc11 25px;
+            border-color: #a0fc11;
+            border-width: 25px;
             box-shadow: 0px 15px 25px rgba(176, 255, 0, 0.4);
             text-align: center;
             border-left: #eb2eff 16px solid;
-            
-
+            padding: 10px; /* Añadido para mejorar la estética */
         }
 
         .pdf-container {
             margin-top: 15px;
+            margin-bottom: 30px;
             padding: 15px;
             border: 2px solid rgba(176, 255, 0, 0.5); /* Borde neón sutil */
             border-radius: 10px;
@@ -89,68 +100,53 @@
         }
 
         iframe {
-            border: green;
+            border: 2px solid green; /* Corregido de border: green; */
             display: block;
         }
-        /* Contenedor del video enfocado en centrar el contenido */
-.video-container {
-    display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center;     /* Centrado vertical */
-    margin-top: 15px;
-    width: 100%;
-}
 
-/* Estilos para el elemento de video */
-.video-container video {
-    max-width: 80%;          /* Controla qué tan ancho quieres que se vea (puedes subirlo a 100% si prefieres) */
-    height: auto;            /* Mantiene la proporción original del video */
-    border-radius: 10px;     /* Bordes redondeados para que combine con tus tarjetas */
-    border: 2px solid rgba(176, 38, 255, 0.5); /* Destello morado neón */
-    box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
-}
-/* Ajustamos el contenedor para que el botón quede abajo del video */
-.video-container {
-    display: flex;
-    flex-direction: column; /* Alinea el video arriba y el botón abajo */
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    width: 100%;
-    gap: 15px; /* Separación entre el video y el botón */
-}
+        /* Estilos para el elemento de video y contenedor */
+        .video-container {
+            display: flex;
+            flex-direction: column; /* Alinea el video arriba y el botón abajo */
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            width: 100%;
+            gap: 15px; /* Separación entre el video y el botón */
+        }
 
-.video-container video {
-    max-width: 80%;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid rgba(176, 38, 255, 0.5);
-    box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
-}
+        .video-container video {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid rgba(176, 38, 255, 0.5);
+            box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
+        }
 
-/* Estilo elegante para el botón de descarga */
-.btn-descarga {
-    background-color: transparent;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 2px solid #b026ff;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(176, 38, 255, 0.2);
-}
+        /* Estilo elegante para el botón de descarga */
+        .btn-descarga {
+            background-color: transparent;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #b026ff;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(176, 38, 255, 0.2);
+        }
 
-.btn-descarga:hover {
-    background-color: #b026ff;
-    box-shadow: 0 0 20px #b026ff;
-    transform: scale(1.05);
-}
+        .btn-descarga:hover {
+            background-color: #b026ff;
+            box-shadow: 0 0 20px #b026ff;
+            transform: scale(1.05);
+        }
+
+        /* Corregidos los errores de escritura (typos) en la clase .p */
         .p {
-            text-color:#ffffff;
-            text-aling:center;
-    
-}
+            color: #ffffff;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -159,8 +155,9 @@
     </header>
 
     <main>
+        <!-- SECCIÓN SEMANA 1 -->
         <div class="semana-hover">
-            <h2>Semana 1: INTRODUCCION A ARDUINO </h2>
+            <h2>Semana 1: INTRODUCCION A ARDUINO</h2>
             <p>Haz clic o desplázate para revisar el reporte completo en formato PDF:</p>
         </div>
 
@@ -171,50 +168,51 @@
             </iframe>
         </div>
 
+        <!-- SECCIÓN SEMANA 2 -->
         <div class="semana">
-            <h2>SESION 2:INTRODUCCION A LA ROBOTICA<h2>
+            <h2>SESION 2: INTRODUCCION A LA ROBOTICA</h2> <!-- Corregido: se cerró la etiqueta h2 correctamente -->
             <p>Exploramos el uso de Flexbox para centrar elementos y crear layouts responsivos.</p>
             <div class="video-container">
-        <video autoplay loop muted playsinline controls>
-            <source src="circuitofuncionando.mp4" type="video/mp4">
-            Tu navegador no admite la reproducción de videos.
-        </video>
-    </div>
-    <div class="video-container">
-    
-    <a href="circuitofuncionando.mp4" download="circuitofuncionando.mp4" class="btn-descarga">
-        Descargar Video
-    </a>
-</div>
+                <video autoplay loop muted playsinline controls>
+                    <source src="circuitofuncionando.mp4" type="video/mp4">
+                    Tu navegador no admite la reproducción de videos.
+                </video>
+                <!-- Integrado el botón dentro del mismo contenedor para mantener el orden -->
+                <a href="circuitofuncionando.mp4" download="circuitofuncionando.mp4" class="btn-descarga">
+                    Descargar Video
+                </a>
+            </div>
         </div>
 
-        
-
+        <!-- SECCIÓN SEMANA 3 Y 4 -->
         <div class="semana">
-            <h2>SESION 3 y 4:CIRCUITO FUNCIONANDO</h2>
-            <p>CREAMOS UN CIRCUITO QUE FUNCIONARA .</p>
+            <h2>SESION 3 y 4: CIRCUITO FUNCIONANDO</h2>
+            <p>CREAMOS UN CIRCUITO QUE FUNCIONARA.</p>
             <div class="video-container">
-        <video autoplay loop muted playsinline controls>
-            <source src="video daniel.mp4" type="video/mp4">
-            Tu navegador no admite la reproducción de videos.
-        </video>
-    </div>
+                <video autoplay loop muted playsinline controls>
+                    <source src="video daniel.mp4" type="video/mp4">
+                    Tu navegador no admite la reproducción de videos.
+                </video>
+            </div>
+        </div> <!-- Corregido: Se cerró esta sección que se quedaba abierta -->
 
-            <div class="semana">
-            <h2>SESION 5:CIRCUITO ultrasonico</h2>
-            <p>CREAMOS UN CIRCUITO QUE FUNCIONARA y APAGARA LUCES DE ACUERDO CON LAS DISTANCIAS .</p>
+        <!-- SECCIÓN SEMANA 5 -->
+        <div class="semana">
+            <h2>SESION 5: CIRCUITO ULTRASONICO</h2>
+            <p>CREAMOS UN CIRCUITO QUE FUNCIONARA y APAGARA LUCES DE ACUERDO CON LAS DISTANCIAS.</p>
             <div class="video-container">
-        <video autoplay loop muted playsinline controls>
-            <source src="funcionando.mp4" type="video/mp4">
-            Tu navegador no admite la reproducción de videos.
-        </video>
-    </div>
+                <video autoplay loop muted playsinline controls>
+                    <source src="funcionando.mp4" type="video/mp4">
+                    Tu navegador no admite la reproducción de videos.
+                </video>
+            </div>
+        </div> <!-- Corregido: Se cerró correctamente la sección de la semana 5 -->
                 
     </main>
 
     <footer>
-        <span>@dars</span><span>span</span>
-        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" height="50" width="200">
+        <span>@dars</span> <!-- Corregido: se eliminó la palabra "span" que estaba suelta -->
+        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" height="50" width="200" alt="Logo Capouilliez">
     </footer>
 </body>
 </html>
