@@ -25,7 +25,7 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
-            width: 100%; /* Asegura que el contenedor principal use el espacio disponible */
+            width: 100%;
             box-sizing: border-box;
         }
 
@@ -39,7 +39,7 @@
         }
 
         h1 {
-            color: #fff; /* Texto blanco para resaltar el brillo */
+            color: #fff;
             text-shadow:
                 0 0 7px #fff,
                 0 0 10px #fff,
@@ -54,15 +54,14 @@
         }
 
         footer img {
-            transition: transform 0.3s ease; /* Hace que el zoom sea suave */
+            transition: transform 0.3s ease;
             cursor: pointer;
         }
 
         footer img:hover {
-            transform: scale(1.2); /* Aumenta el tamaño un 20% */
+            transform: scale(1.2);
         }
 
-        /* Corrección de la clase .semana para que tenga estilos base */
         .semana {
             margin-bottom: 40px;
             padding: 20px;
@@ -86,33 +85,32 @@
             box-shadow: 0px 15px 25px rgba(176, 255, 0, 0.4);
             text-align: center;
             border-left: #eb2eff 16px solid;
-            padding: 10px; /* Añadido para mejorar la estética */
+            padding: 10px;
         }
 
         .pdf-container {
             margin-top: 15px;
             margin-bottom: 30px;
             padding: 15px;
-            border: 2px solid rgba(176, 255, 0, 0.5); /* Borde neón sutil */
+            border: 2px solid rgba(176, 255, 0, 0.5);
             border-radius: 10px;
-            overflow: hidden; /* Para que las esquinas del PDF no se salgan del borde redondeado */
+            overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         iframe {
-            border: 2px solid green; /* Corregido de border: green; */
+            border: 2px solid green;
             display: block;
         }
 
-        /* Estilos para el elemento de video y contenedor */
         .video-container {
             display: flex;
-            flex-direction: column; /* Alinea el video arriba y el botón abajo */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             margin-top: 15px;
             width: 100%;
-            gap: 15px; /* Separación entre el video y el botón */
+            gap: 15px;
         }
 
         .video-container video {
@@ -123,7 +121,6 @@
             box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
         }
 
-        /* Estilo elegante para el botón de descarga */
         .btn-descarga {
             background-color: transparent;
             color: #fff;
@@ -142,8 +139,8 @@
             transform: scale(1.05);
         }
 
-        /* Corregidos los errores de escritura (typos) en la clase .p */
-        .p {
+        /* CORRECCIÓN AQUÍ: Se cambió de '.p' a 'p' y se arreglaron las propiedades */
+        p {
             color: #ffffff;
             text-align: center;
         }
@@ -170,14 +167,13 @@
 
         <!-- SECCIÓN SEMANA 2 -->
         <div class="semana">
-            <h2>SESION 2: INTRODUCCION A LA ROBOTICA</h2> <!-- Corregido: se cerró la etiqueta h2 correctamente -->
+            <h2>SESION 2: INTRODUCCION A LA ROBOTICA</h2>
             <p>Exploramos el uso de Flexbox para centrar elementos y crear layouts responsivos.</p>
             <div class="video-container">
                 <video autoplay loop muted playsinline controls>
                     <source src="circuitofuncionando.mp4" type="video/mp4">
                     Tu navegador no admite la reproducción de videos.
                 </video>
-                <!-- Integrado el botón dentro del mismo contenedor para mantener el orden -->
                 <a href="circuitofuncionando.mp4" download="circuitofuncionando.mp4" class="btn-descarga">
                     Descargar Video
                 </a>
@@ -194,7 +190,7 @@
                     Tu navegador no admite la reproducción de videos.
                 </video>
             </div>
-        </div> <!-- Corregido: Se cerró esta sección que se quedaba abierta -->
+        </div>
 
         <!-- SECCIÓN SEMANA 5 -->
         <div class="semana">
@@ -206,12 +202,12 @@
                     Tu navegador no admite la reproducción de videos.
                 </video>
             </div>
-        </div> <!-- Corregido: Se cerró correctamente la sección de la semana 5 -->
+        </div>
                 
     </main>
 
     <footer>
-        <span>@dars</span> <!-- Corregido: se eliminó la palabra "span" que estaba suelta -->
+        <span>@dars</span>
         <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" height="50" width="200" alt="Logo Capouilliez">
     </footer>
 </body>
