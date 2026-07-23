@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Documento</title>
+    <title>Bitácora Segunda y Tercera Unidad</title>
     <link rel="icon" type="image/png" href="Recursos/img/LOGO_CAPOUILLIEZ - Isotipos rojo.png">
     <style>
         html, body {
@@ -12,8 +12,10 @@
             flex-direction: column;
             min-height: 100vh;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.redd.it/i-made-some-more-simplistic-jojo-wallpapers-v0-8v9iqv18ucmc1.png?width=1080&crop=smart&auto=webp&s=3e02302c1607072f57c7145dfeed74eec955b5f9') no-repeat center center fixed;
+            /* Fondo ajustado para desplazarse con la página */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.redd.it/i-made-some-more-simplistic-jojo-wallpapers-v0-8v9iqv18ucmc1.png?width=1080&crop=smart&auto=webp&s=3e02302c1607072f57c7145dfeed74eec955b5f9') repeat-y center top;
             background-size: cover;
+            background-attachment: scroll;
         }
 
         header {
@@ -57,16 +59,18 @@
         footer img {
             transition: transform 0.3s ease;
             cursor: pointer;
+            border-radius: 8px;
         }
 
         footer img:hover {
             transform: scale(1.2);
         }
 
+        /* Cuadrados y contenedores redondeados */
         .semana {
             margin-bottom: 40px;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 20px;
         }
 
         .semana-hover {
@@ -76,16 +80,17 @@
             box-shadow: 0px 15px 25px rgba(176, 255, 0, 0.4);
             text-align: center;
             border-left: #eb2eff 16px solid;
-            padding: 20px; /* <--- AGREGA ESTA LÍNEA AQUí */
+            padding: 20px;
+            border-radius: 20px;
         }
 
         .semana-hover p {
-    color: #1a1a1a !important; 
-    font-weight: bold;
-}
-        
+            color: #1a1a1a !important; 
+            font-weight: bold;
+        }
 
-        .semana h2 {
+        /* Títulos h2 con borde sólido negro */
+        .semana h2, .semana-hover h2 {
             background-color: aliceblue;
             color: #1cf726;
             border-color: #a0fc11;
@@ -94,6 +99,15 @@
             text-align: center;
             border-left: #eb2eff 16px solid;
             padding: 10px;
+            border-radius: 15px;
+            
+            /* Borde negro sólido para el texto */
+            -webkit-text-stroke: 1.8px #000000;
+            text-shadow: 
+                -1px -1px 0 #000,  
+                 1px -1px 0 #000,
+                -1px  1px 0 #000,
+                 1px  1px 0 #000;
         }
 
         .pdf-container {
@@ -101,7 +115,7 @@
             margin-bottom: 30px;
             padding: 15px;
             border: 2px solid rgba(176, 255, 0, 0.5);
-            border-radius: 10px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
@@ -109,6 +123,25 @@
         iframe {
             border: 2px solid green;
             display: block;
+            border-radius: 15px;
+        }
+
+        .img-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            gap: 20px;
+        }
+
+        /* Imágenes con bordes redondeados */
+        .img-container img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 18px;
+            border: 2px solid rgba(176, 255, 0, 0.5);
+            box-shadow: 0 0 15px rgba(176, 255, 0, 0.3);
         }
 
         .video-container {
@@ -121,10 +154,11 @@
             gap: 15px;
         }
 
+        /* Videos con bordes redondeados */
         .video-container video {
             max-width: 80%;
             height: auto;
-            border-radius: 10px;
+            border-radius: 18px;
             border: 2px solid rgba(176, 38, 255, 0.5);
             box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
         }
@@ -139,6 +173,7 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 0 10px rgba(176, 38, 255, 0.2);
+            margin-top: 10px;
         }
 
         .btn-descarga:hover {
@@ -147,7 +182,6 @@
             transform: scale(1.05);
         }
 
-        
         p {
             color: #ffffff;
             text-align: center;
@@ -160,22 +194,19 @@
     </header>
 
     <main>
-       
+        <!-- Semana 1 -->
         <div class="semana-hover">
             <h2>Semana 1: INTRODUCCIÓN A ARDUINO</h2>
-            <p>Respondimos un pdf:Haz clic o desplázate para revisar el reporte completo en formato PDF:</p>
-            
+            <p>Respondimos un pdf: Haz clic o desplázate para revisar el reporte completo en formato PDF:</p>
         </div>
 
         <div class="pdf-container">
             <iframe src="IntroduccionArduinoDARSfinal.pdf" width="100%" height="500px">
                 Tu navegador no admite visualización de PDFs.
-                
-                </a>
             </iframe>
         </div>
 
-        
+        <!-- Sesión 2 -->
         <div class="semana">
             <h2>SESION 2: INTRODUCCIÓN A LA ROBÓTICA</h2>
             <p>Creamos un circuito en tinkercad y simulamos su función</p>
@@ -184,81 +215,60 @@
                     <source src="circuitofuncionando.mp4" type="video/mp4">
                     Tu navegador no admite la reproducción de videos.
                 </video>
-                
-                <a href="circuitofuncionando.mp4" download="circuitofuncionando.mp4" class="btn-descarga">
-                    Descargar Video
-                </a>
             </div>
         </div>
 
+        <!-- Sesión 3 -->
         <div class="semana">
-            <h2>SESION 3: Semaforos(Antes de vacaciones)</h2>
+            <h2>SESION 3: Semáforos (Antes de vacaciones)</h2>
             <p>Creamos un circuito y lo intentamos probar antes de vacaciones</p>
-            <div class="pdf-container">
-            <iframe src="WhatsApp Image 2026-07-22 at 5.48.17 PM (1).jpeg" width="100%" height="500px">
-                Tu navegador no admite visualización de PDFs.
-                
-                </a>
-            </iframe>
-                <div class="video-container">
+            
+            <div class="img-container">
+                <img src="WhatsApp Image 2026-07-22 at 5.48.17 PM (1).jpeg" alt="Evidencia Semáforo">
+            </div>
+
+            <div class="video-container">
                 <video autoplay loop muted playsinline controls>
                     <source src="video daniel.mp4" type="video/mp4">
                     Tu navegador no admite la reproducción de videos.
                 </video>
-                <a href="video daniel.mp4" download="video daniel.mp4" class="btn-descarga">
-                    Descargar Video
-                </a>
             </div>
         </div>
-        </div>
 
-        
+        <!-- Sesión 4 y 5 -->
         <div class="semana">
-            <h2>SESION 4 y 5: CIRCUITO FUNCIONANDO(union clases y semaforo)</h2>
-            <p>Creamos un circuito el cual prenda las luces led.</p>
-            <div class="pdf-container">
-            <iframe src="apagado.jpeg" width="100%" height="500px">
-                Tu navegador no admite visualización de PDFs.
-                
-                </a>
-            </iframe>
-                <div class="pdf-container">
-            <iframe src="encendido.jpeg" width="100%" height="500px">
-                Tu navegador no admite visualización de PDFs.
-                
-                </a>
-            </iframe>
+            <h2>SESION 4 y 5: CIRCUITO FUNCIONANDO (Unión clases y semáforo)</h2>
+            <p>Creamos un circuito el cual prenda las luces LED.</p>
+            
+            <div class="img-container">
+                <img src="apagado.jpeg" alt="Circuito apagado">
+                <img src="encendido.jpeg" alt="Circuito encendido">
+            </div>
         </div>
 
-        
+        <!-- Sesión 6 -->
         <div class="semana">
             <h2>SESION 6: CIRCUITO ULTRASONICO</h2>
-            <p>Creamos un circuito con un sensor ultrasonico el cual prenda las luces led de acorde a la distancia .</p>
+            <p>Creamos un circuito con un sensor ultrasónico el cual prenda las luces LED de acuerdo a la distancia.</p>
             <div class="video-container">
                 <video autoplay loop muted playsinline controls>
                     <source src="final final tics.mp4" type="video/mp4">
                     Tu navegador no admite la reproducción de videos.
                 </video>
-                <a href="final final tics.mp4" download="final final tics.mp4" class="btn-descarga">
-                    Descargar Video
-                </a>
             </div>
         </div>
 
+        <!-- Sesión 7 -->
         <div class="semana">
             <h2>SESION 7: CIRCUITO ESCALERAS</h2>
-            <p>Creamos un circuito el cual simule las escaleras electricas de un centro comercial.</p>
+            <p>Creamos un circuito el cual simule las escaleras eléctricas de un centro comercial.</p>
             <div class="video-container">
                 <video autoplay loop muted playsinline controls>
                     <source src="video 7 tics.mp4" type="video/mp4">
                     Tu navegador no admite la reproducción de videos.
                 </video>
-                <a href="video 7 tics.mp4" download="video daniel.mp4" class="btn-descarga">
-                    Descargar Video
-                </a>
             </div>
         </div>
-                
     </main>
 
     <footer>
