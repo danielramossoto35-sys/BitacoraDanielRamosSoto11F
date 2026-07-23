@@ -12,9 +12,9 @@
             flex-direction: column;
             min-height: 100vh;
             text-align: center;
-            /* Fondo ajustado para desplazarse con la página */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.redd.it/i-made-some-more-simplistic-jojo-wallpapers-v0-8v9iqv18ucmc1.png?width=1080&crop=smart&auto=webp&s=3e02302c1607072f57c7145dfeed74eec955b5f9') repeat-y center top;
-            background-size: cover;
+            
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.redd.it/i-made-some-more-simplistic-jojo-wallpapers-v0-8v9iqv18ucmc1.png?width=1080&crop=smart&auto=webp&s=3e02302c1607072f57c7145dfeed74eec955b5f9') repeat center top;
+            background-size: auto;
             background-attachment: scroll;
         }
 
@@ -66,7 +66,6 @@
             transform: scale(1.2);
         }
 
-        /* Cuadrados y contenedores redondeados */
         .semana {
             margin-bottom: 40px;
             padding: 20px;
@@ -89,7 +88,7 @@
             font-weight: bold;
         }
 
-        /* Títulos h2 con borde sólido negro */
+        
         .semana h2, .semana-hover h2 {
             background-color: aliceblue;
             color: #1cf726;
@@ -100,8 +99,6 @@
             border-left: #eb2eff 16px solid;
             padding: 10px;
             border-radius: 15px;
-            
-            /* Borde negro sólido para el texto */
             -webkit-text-stroke: 1.8px #000000;
             text-shadow: 
                 -1px -1px 0 #000,  
@@ -135,7 +132,6 @@
             gap: 20px;
         }
 
-        /* Imágenes con bordes redondeados */
         .img-container img {
             max-width: 80%;
             height: auto;
@@ -154,7 +150,6 @@
             gap: 15px;
         }
 
-        /* Videos con bordes redondeados */
         .video-container video {
             max-width: 80%;
             height: auto;
@@ -174,6 +169,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 0 10px rgba(176, 38, 255, 0.2);
             margin-top: 10px;
+            display: inline-block;
         }
 
         .btn-descarga:hover {
@@ -194,7 +190,7 @@
     </header>
 
     <main>
-        <!-- Semana 1 -->
+       
         <div class="semana-hover">
             <h2>Semana 1: INTRODUCCIÓN A ARDUINO</h2>
             <p>Respondimos un pdf: Haz clic o desplázate para revisar el reporte completo en formato PDF:</p>
@@ -206,7 +202,7 @@
             </iframe>
         </div>
 
-        <!-- Sesión 2 -->
+       
         <div class="semana">
             <h2>SESION 2: INTRODUCCIÓN A LA ROBÓTICA</h2>
             <p>Creamos un circuito en tinkercad y simulamos su función</p>
@@ -215,10 +211,13 @@
                     <source src="circuitofuncionando.mp4" type="video/mp4">
                     Tu navegador no admite la reproducción de videos.
                 </video>
+                <a href="circuitofuncionando.mp4" download="circuitofuncionando.mp4" class="btn-descarga">
+                    Descargar Video
+                </a>
             </div>
         </div>
 
-        <!-- Sesión 3 -->
+       
         <div class="semana">
             <h2>SESION 3: Semáforos (Antes de vacaciones)</h2>
             <p>Creamos un circuito y lo intentamos probar antes de vacaciones</p>
@@ -232,10 +231,13 @@
                     <source src="video daniel.mp4" type="video/mp4">
                     Tu navegador no admite la reproducción de videos.
                 </video>
+                <a href="video daniel.mp4" download="video daniel.mp4" class="btn-descarga">
+                    Descargar Video
+                </a>
             </div>
         </div>
 
-        <!-- Sesión 4 y 5 -->
+        
         <div class="semana">
             <h2>SESION 4 y 5: CIRCUITO FUNCIONANDO (Unión clases y semáforo)</h2>
             <p>Creamos un circuito el cual prenda las luces LED.</p>
@@ -246,7 +248,7 @@
             </div>
         </div>
 
-        <!-- Sesión 6 -->
+       
         <div class="semana">
             <h2>SESION 6: CIRCUITO ULTRASONICO</h2>
             <p>Creamos un circuito con un sensor ultrasónico el cual prenda las luces LED de acuerdo a la distancia.</p>
@@ -255,10 +257,13 @@
                     <source src="final final tics.mp4" type="video/mp4">
                     Tu navegador no admite la reproducción de videos.
                 </video>
+                <a href="final final tics.mp4" download="final final tics.mp4" class="btn-descarga">
+                    Descargar Video
+                </a>
             </div>
         </div>
 
-        <!-- Sesión 7 -->
+       
         <div class="semana">
             <h2>SESION 7: CIRCUITO ESCALERAS</h2>
             <p>Creamos un circuito el cual simule las escaleras eléctricas de un centro comercial.</p>
@@ -267,6 +272,9 @@
                     <source src="video 7 tics.mp4" type="video/mp4">
                     Tu navegador no admite la reproducción de videos.
                 </video>
+                <a href="video 7 tics.mp4" download="video 7 tics.mp4" class="btn-descarga">
+                    Descargar Video
+                </a>
             </div>
         </div>
     </main>
