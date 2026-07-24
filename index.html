@@ -5,6 +5,10 @@
     <title>Bitácora Segunda y Tercera Unidad</title>
     <link rel="icon" type="image/png" href="Recursos/img/LOGO_CAPOUILLIEZ - Isotipos rojo.png">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         html, body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -12,15 +16,81 @@
             flex-direction: column;
             min-height: 100vh;
             text-align: center;
-            
+            /* Fondo patrón que se repite sin perder calidad */
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://preview.redd.it/i-made-some-more-simplistic-jojo-wallpapers-v0-8v9iqv18ucmc1.png?width=1080&crop=smart&auto=webp&s=3e02302c1607072f57c7145dfeed74eec955b5f9') repeat center top;
             background-size: auto;
             background-attachment: scroll;
         }
 
+        /* BARRA DE BÚSQUEDA FLOTANTE */
+        .search-bar-container {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border-bottom: 2px solid #a0fc11;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .search-bar-container input {
+            padding: 10px 18px;
+            width: 60%;
+            max-width: 400px;
+            border-radius: 20px;
+            border: 2px solid #a0fc11;
+            background: #111;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 0 8px rgba(160, 252, 17, 0.3);
+        }
+
+        .search-bar-container button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background: #eb2eff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 10px #eb2eff;
+            transition: 0.3s;
+        }
+
+        .search-bar-container button:hover {
+            transform: scale(1.05);
+            background: #0ba9ff;
+            box-shadow: 0 0 15px #0ba9ff;
+        }
+
         header {
-            padding: 20px;
+            padding: 30px 20px;
             background-color: rgba(3, 255, 0, 0.674);
+        }
+
+        /* TITULO H1 ESTILO CARTEL LED */
+        h1 {
+            color: #fff;
+            font-size: 3.2rem;
+            margin: 0;
+            /* Borde negro sólido de cartel LED */
+            -webkit-text-stroke: 2.5px #000000;
+            text-shadow:
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #0ba9ff,
+                0 0 40px #0ba9ff,
+                0 0 80px #0ba9ff,
+                -2px -2px 0 #000,  
+                 2px -2px 0 #000,
+                -2px  2px 0 #000,
+                 2px  2px 0 #000;
+            transition: 0.3s;
         }
 
         main {
@@ -32,44 +102,26 @@
             box-sizing: border-box;
         }
 
-        footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            border-top: 1px solid rgb(150, 13, 13);
-            background-color: rgb(9, 159, 109);
+        /* TEXTO GENERAL Y AJUSTE DE CONTENIDO */
+        p {
+            color: #ffffff;
+            text-align: center;
+            font-size: 1.15rem; /* Letras más grandes */
+            line-height: 1.6;
+            word-wrap: break-word; /* Para que el texto largo nunca se salga */
+            overflow-wrap: break-word;
+            margin: 10px 0;
         }
 
-        h1 {
-            color: #fff;
-            text-shadow:
-                0 0 7px #fff,
-                0 0 10px #fff,
-                0 0 21px #fff,
-                0 0 42px #0ba9ff,
-                0 0 82px #0ba9ff,
-                0 0 92px #0ba9ff,
-                0 0 102px #0ba9ff,
-                0 0 151px #0ba9ff;
-            font-size: 3rem;
-            transition: 0.3s;
-        }
-
-        footer img {
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            border-radius: 8px;
-        }
-
-        footer img:hover {
-            transform: scale(1.2);
-        }
-
+        /* FICHAS Y CONTENEDORES */
         .semana {
             margin-bottom: 40px;
-            padding: 20px;
+            padding: 25px;
             border-radius: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .semana-hover {
@@ -88,7 +140,7 @@
             font-weight: bold;
         }
 
-        
+        /* TÍTULOS H2 CON BORDE NEGRO */
         .semana h2, .semana-hover h2 {
             background-color: aliceblue;
             color: #1cf726;
@@ -105,6 +157,7 @@
                  1px -1px 0 #000,
                 -1px  1px 0 #000,
                  1px  1px 0 #000;
+            word-wrap: break-word;
         }
 
         .pdf-container {
@@ -158,11 +211,10 @@
             box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
         }
 
-        
         .video-rotado {
             transform: rotate(-90deg);
-            margin: 60px 0; 
-            max-width: 50% !important; 
+            margin: 60px 0;
+            max-width: 50% !important;
         }
 
         .btn-descarga {
@@ -185,22 +237,67 @@
             transform: scale(1.05);
         }
 
-        p {
-            color: #ffffff;
-            text-align: center;
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            border-top: 1px solid rgb(150, 13, 13);
+            background-color: rgb(9, 159, 109);
+        }
+
+        /* ESTILO NEÓN CON BORDE NEGRO PARA @DARS EN FOOTER */
+        .footer-tag {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #eb2eff;
+            padding: 6px 16px;
+            border: 2px solid #eb2eff;
+            border-radius: 15px;
+            box-shadow: 0 0 12px #eb2eff, inset 0 0 8px #eb2eff;
+            -webkit-text-stroke: 1.2px #000000;
+            text-shadow: 
+                -1px -1px 0 #000,  
+                 1px -1px 0 #000,
+                -1px  1px 0 #000,
+                 1px  1px 0 #000,
+                 0 0 8px #eb2eff;
+        }
+
+        footer img {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        footer img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Clase de animación al encontrar resultado con el buscador */
+        .highlight-section {
+            outline: 4px solid #0ba9ff;
+            box-shadow: 0 0 30px #0ba9ff !important;
         }
     </style>
 </head>
 <body>
+
+    <!-- BUSCADOR FLOTANTE -->
+    <div class="search-bar-container">
+        <input type="text" id="searchInput" placeholder="Escribe 'Semana 3', 'Sesion 6'..." onkeypress="if(event.key==='Enter') buscarSemana()">
+        <button onclick="buscarSemana()">Buscar</button>
+    </div>
+
     <header>
         <h1>Bitácora Segunda y Tercera unidad</h1>
     </header>
 
     <main>
-        
-        <div class="semana-hover">
+        <!-- Semana 1 -->
+        <div class="semana-hover" id="semana1">
             <h2>Semana 1: INTRODUCCIÓN A ARDUINO</h2>
-            <p>Respondimos un pdf sobre la robotica y sus componentes, al igual que identificamos partes de tal.</p>
+            <p>Respondimos un pdf: Haz clic o desplázate para revisar el reporte completo en formato PDF:</p>
         </div>
 
         <div class="pdf-container">
@@ -209,10 +306,10 @@
             </iframe>
         </div>
 
-        
-        <div class="semana">
+        <!-- Sesión 2 -->
+        <div class="semana" id="sesion2">
             <h2>SESION 2: INTRODUCCIÓN A LA ROBÓTICA</h2>
-            <p>Creamos un circuito en tinkercad y simulamos su función a como seria en la vida real, primer circuito</p>
+            <p>Creamos un circuito en tinkercad y simulamos su función</p>
             <div class="video-container">
                 <video autoplay loop muted playsinline controls>
                     <source src="circuitofuncionando.mp4" type="video/mp4">
@@ -224,10 +321,10 @@
             </div>
         </div>
 
-        
-        <div class="semana">
+        <!-- Sesión 3 -->
+        <div class="semana" id="sesion3">
             <h2>SESION 3: Semáforos (Antes de vacaciones)</h2>
-            <p>Creamos un circuito que encendiera las luces de acorde a las notas y lo intentamos probar antes de vacaciones</p>
+            <p>Creamos un circuito y lo intentamos probar antes de vacaciones</p>
             
             <div class="img-container">
                 <img src="WhatsApp Image 2026-07-22 at 5.48.17 PM (1).jpeg" alt="Evidencia Semáforo">
@@ -244,10 +341,20 @@
             </div>
         </div>
 
-       
-        <div class="semana">
+        <!-- NUEVA FICHA AGREGADA ENTRE SESIÓN 3 Y SESIÓN 4 Y 5 -->
+        <div class="semana" id="sesion-intermedia">
+            <h2>NUEVA SESIÓN: ACTIVIDAD INTERMEDIA</h2>
+            <p>Escribe aquí la descripción de esta actividad. Puedes extenderte todo lo que necesites, ya que el contenedor ajustará las líneas automáticamente sin salirse de la ficha.</p>
+            
+            <div class="img-container">
+                <img src="Recursos/img/tu_foto_aqui.jpeg" alt="Foto de la actividad">
+            </div>
+        </div>
+
+        <!-- Sesión 4 y 5 -->
+        <div class="semana" id="sesion4-5">
             <h2>SESION 4 y 5: CIRCUITO FUNCIONANDO (Unión clases y semáforo)</h2>
-            <p>Creamos un circuito el cual prenda todas las luces LED, es uno nuevo que hicimos antes de vacaciones.</p>
+            <p>Creamos un circuito el cual prenda las luces LED.</p>
             
             <div class="img-container">
                 <img src="apagado.jpeg" alt="Circuito apagado">
@@ -255,10 +362,10 @@
             </div>
         </div>
 
-      
-        <div class="semana">
+        <!-- Sesión 6 -->
+        <div class="semana" id="sesion6">
             <h2>SESION 6: CIRCUITO ULTRASONICO</h2>
-            <p>Creamos un circuito con un sensor ultrasónico el cual prenda las luces LED de acuerdo a la distancia en la que se situe el punto.</p>
+            <p>Creamos un circuito con un sensor ultrasónico el cual prenda las luces LED de acuerdo a la distancia.</p>
             <div class="video-container">
                 <video autoplay loop muted playsinline controls>
                     <source src="final final tics.mp4" type="video/mp4">
@@ -270,10 +377,10 @@
             </div>
         </div>
 
-        
-        <div class="semana">
+        <!-- Sesión 7 -->
+        <div class="semana" id="sesion7">
             <h2>SESION 7: CIRCUITO ESCALERAS</h2>
-            <p>Creamos un circuito el cual simule las escaleras eléctricas de un centro comercial y como es que funcionan al detectar a las personas.</p>
+            <p>Creamos un circuito el cual simule las escaleras eléctricas de un centro comercial.</p>
             <div class="video-container">
                 <video autoplay loop muted playsinline controls>
                     <source src="video 7 tics.mp4" type="video/mp4">
@@ -287,8 +394,41 @@
     </main>
 
     <footer>
-        <span>@dars</span>
-        <img src="Recursos/img/LOGOCAPU.png" height="50" width="200" alt="Logo Capouilliez">
+        <span class="footer-tag">@dars</span>
+        <img src="Recursos/img/LOGO_CAPOUILLIEZ - Isotipos rojo.png" height="50" width="200" alt="Logo Capouilliez">
     </footer>
+
+    <!-- SCRIPT PARA EL BUSCADOR E INTELIGENCIA DE BÚSQUEDA -->
+    <script>
+        function buscarSemana() {
+            const input = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!input) return;
+
+            const secciones = document.querySelectorAll('.semana, .semana-hover');
+            let encontrado = false;
+
+            secciones.forEach(seccion => {
+                const textoH2 = seccion.querySelector('h2') ? seccion.querySelector('h2').innerText.toLowerCase() : '';
+                const idSeccion = seccion.id.toLowerCase();
+
+                // Normalización para detectar búsquedas tipo "3", "semana 3", "sesion 3", etc.
+                if (textoH2.includes(input) || idSeccion.includes(input)) {
+                    seccion.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Efecto visual al encontrar
+                    seccion.classList.add('highlight-section');
+                    setTimeout(() => {
+                        seccion.classList.remove('highlight-section');
+                    }, 2500);
+
+                    encontrado = true;
+                }
+            });
+
+            if (!encontrado) {
+                alert('No se encontró ninguna sesión o semana con esa búsqueda.');
+            }
+        }
+    </script>
 </body>
 </html>
